@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { searchMovies } from "../services/tmdb";
 const SearchMovie = () => {
   const [title, setTitle] = useState(<>Recherche...</>);
   const [search, setSearch] = useState("");
   
-
 
 const handleSubmit = (e) => {
     e.preventDefault();
