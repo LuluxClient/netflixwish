@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 const SearchMovie = () => {
   const [title, setTitle] = useState(<>Recherche...</>);
   const [search, setSearch] = useState("");
@@ -24,7 +24,7 @@ const SearchMovie = () => {
         <input
           type="text"
           name="search"
-          placeholder="Rechercher un filmm"
+          placeholder="Rechercher un film"
           onChange={(e) => handleInputChange(e.target.value)}
         />
         <button type="submit">Rechercher</button>
