@@ -1,6 +1,6 @@
 import { useState } from "react";
 const SearchMovie = () => {
-    
+
   const [search, setSearch] = useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -8,9 +8,9 @@ const SearchMovie = () => {
     setSearch();
   };
 
-  const handleInputChange = (input) => {
-    setSearch(input);
-    console.log(input);
+  const handleInputChange = (searchInput) => {
+    setSearch(searchInput);
+    console.log(searchInput);
   };
 
   return (
@@ -20,7 +20,7 @@ const SearchMovie = () => {
         <input
           type="text"
           name="search"
-          placeholder="Rechercher un film"
+          placeholder="Rechercher un filmm"
           onChange={(e) => handleInputChange(e.target.value)}
         />
         <button type="submit">Rechercher</button>
