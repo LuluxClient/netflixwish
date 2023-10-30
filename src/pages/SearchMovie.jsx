@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 const SearchMovie = () => {
-
+  const [title, setTitle] = useState(<>Recherche...</>);
   const [search, setSearch] = useState("");
+  
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     alert("Recherche lancée pour " + search);
+    setTitle(<h1>Recherche pour {search}</h1>);
     setSearch();
   };
 
@@ -15,7 +19,7 @@ const SearchMovie = () => {
 
   return (
     <>
-      <h1>Recherche</h1>
+      {title}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
