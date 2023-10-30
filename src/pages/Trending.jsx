@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 
 const Trending = () => {
     const [click, setClick] = useState(0)
-    
+    const moviesArray = ["Fast and furious", "Barbie", "Nemo"]
+
     useEffect(() => {
         console.log("Trending")
     }, [click])
 
-    const moviesArray = ["Fast and furious", "Barbie", "Nemo"]
 
     const handleClick = () => {
         console.log("Clicked");
@@ -19,7 +19,7 @@ const Trending = () => {
         <>
           <p>Likes: {click}</p>
           <button onClick={handleClick}> Like</button>
-          {/* <MoviesList movies={moviesArray} /> */}
+          <MoviesList movies={moviesArray} />
         </>
     )
 }
