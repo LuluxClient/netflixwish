@@ -5,16 +5,20 @@ const SearchMovie = () => {
   
 
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Recherche lancée pour " + search);
-    setTitle(<h1>Recherche pour {search}</h1>);
-    setSearch();
-  };
+    if (search.length > 0) {
+        alert("Recherche lancée pour " + search);
+        setTitle(<h1>Recherche pour {search}</h1>);
+        setSearch("");
+    } else {
+        alert("Merci d'entrer un titre");
+    }
+};
 
-  const handleInputChange = (searchInput) => {
-    setSearch(searchInput);
-    console.log(searchInput);
+  const handleInputChange = (titleInput) => {
+    setSearch(titleInput);
+    console.log(titleInput);
   };
 
   return (
