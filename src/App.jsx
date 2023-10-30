@@ -1,9 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import MoviesList from './MoviesList'
 
 function App() {
+  const moviesArray = ["Fast and furious", "Barbie", "Nemo"]
   return (
     <div className="App">
+      <MoviesList movies={moviesArray}/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
