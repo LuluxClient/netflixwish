@@ -1,4 +1,4 @@
-# Magnfique Readme :)
+# Magnifique Readme :)
 
 # Getting Started with Create React App
 
