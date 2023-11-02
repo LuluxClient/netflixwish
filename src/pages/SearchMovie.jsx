@@ -1,33 +1,29 @@
-import { useRef, useEffect, useState } from "react";
-import { searchMovies } from "../services/tmdb";
+import { useEffect, useState } from "react";
+import { useRef } from "react";
+
 const SearchMovie = () => {
-  const [title, setTitle] = useState(<>Recherche...</>);
+  const [title, setTitle] = useState(<h1>Recherche...</h1>);
   const [search, setSearch] = useState("");
   const myInputRef = useRef(null);
 
   const focusInput = () => {
     myInputRef.current.focus();
   }
-  
+
   useEffect(() => {
     focusInput();
-  }, []);
+  }, [])
 
-const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    // if (search.length > 0) {
-      //Pour Luca du futur il faut que tu refasses ce système de con plus proprement et FoNcTiOnNeLlE
-        alert("Recherche lancée pour " + search);
-        setTitle(<h1>Recherche pour {search}</h1>);
-        setSearch("");
-    // } else {
-    //     alert("Merci d'entrer un titre");
-    // }
-};
+    setSearch();
+    setTitle(<h1>Recherche pour "{search}"</h1>);
+    alert("Recherche lancée pour " + search);
+  };
 
-  const handleInputChange = (titleInput) => {
-    setSearch(titleInput);
-    console.log(titleInput);
+  const handleInputChange = (textInput) => {
+    setSearch(textInput);
+    console.log(textInput);
   };
 
   return (
@@ -38,7 +34,7 @@ const handleSubmit = (e) => {
           ref={myInputRef}
           type="text"
           name="search"
-          placeholder="Rechercher un film"
+          placeholder="Rechercher un film..."
           onChange={(e) => handleInputChange(e.target.value)}
         />
         <button type="submit">Rechercher</button>
