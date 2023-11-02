@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { searchMovies } from "../services/tmdb";
+import CustomNav from "../components/CustomNav";
 const SearchMovie = () => {
   const [title, setTitle] = useState(<>Recherche...</>);
   const [search, setSearch] = useState("");
@@ -8,7 +9,7 @@ const SearchMovie = () => {
 const handleSubmit = (e) => {
     e.preventDefault();
     // if (search.length > 0) {
-      //Pour Luca du futur il faut que tu refasses ce système de con plus proprement et FoNcTiOnNeLlEm
+      //Pour Luca du futur il faut que tu refasses ce système de con plus proprement et FoNcTiOnNeLlE
         alert("Recherche lancée pour " + search);
         setTitle(<h1>Recherche pour {search}</h1>);
         setSearch("");
@@ -34,6 +35,7 @@ const handleSubmit = (e) => {
         />
         <button type="submit">Rechercher</button>
       </form>
+      <CustomNav title={title}/>
     </>
   );
 };
