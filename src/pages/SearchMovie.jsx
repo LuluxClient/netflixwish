@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { searchMovies } from "../services/tmdb";
-import CustomNav from "../components/CustomNav";
 const SearchMovie = () => {
   const [title, setTitle] = useState(<>Recherche...</>);
   const [search, setSearch] = useState("");
@@ -35,7 +34,6 @@ const handleSubmit = (e) => {
         />
         <button type="submit">Rechercher</button>
       </form>
-      <CustomNav title={title}/>
     </>
   );
 };
