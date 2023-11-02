@@ -5,6 +5,7 @@ const Navbar = () => {
     <nav>
       <Link to={"/"}>Trending</Link>{" "}
       <Link to={"/search_movie"}>Recherche</Link>
+      <Link to={"/movie_editor"}>Movie Editor</Link>
     </nav>
   );
 };

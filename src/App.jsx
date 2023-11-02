@@ -3,17 +3,23 @@ import SearchMovie from "./pages/SearchMovie";
 import Trending from "./pages/Trending";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ClassComponent from "./pages/ClassComponent";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import MovieEditor from "./pages/MovieEditor";
 
 function App() {
   return (
     <div>
       <Router>
+        <Provider store ={store}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Trending />} />
           <Route path="/search_movie" element={<SearchMovie />} />
           <Route path="/class_component" element={<ClassComponent/>} />
+          <Route path="/movie_editor" element={<MovieEditor/>} />
         </Routes>
+        </Provider>
       </Router>
     </div>
   );
