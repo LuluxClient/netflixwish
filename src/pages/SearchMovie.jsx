@@ -1,9 +1,17 @@
-import { useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 import { searchMovies } from "../services/tmdb";
 const SearchMovie = () => {
   const [title, setTitle] = useState(<>Recherche...</>);
   const [search, setSearch] = useState("");
+  const myInputRef = useRef(null);
+
+  const focusInput = () => {
+    myInputRef.current.focus();
+  }
   
+  useEffect(() => {
+    focusInput();
+  }, []);
 
 const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +35,7 @@ const handleSubmit = (e) => {
       {title}
       <form onSubmit={handleSubmit}>
         <input
+          ref={myInputRef}
           type="text"
           name="search"
           placeholder="Rechercher un film"

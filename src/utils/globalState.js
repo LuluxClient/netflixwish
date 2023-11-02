@@ -1,3 +1,6 @@
 import { atom } from 'jotai'
 
-export const userAtom = atom ({});
+export const userAtom = atom ({
+    name: "",
+    passion: "",
+});

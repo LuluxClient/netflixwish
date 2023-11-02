@@ -1,19 +1,32 @@
-import { userAtom } from "../utils/globalState";
 import { useAtom } from "jotai";
+import { userAtom } from "../utils/globalState";
 
 const Profile = () => {
-    const [user, setUser] = useAtom(userAtom);
+  const [user, setUser] = useAtom(userAtom);
 
-    const handleChange = (e) => {
-        setUser({ ...user, name: e.target.value });
-    };
-    return (
-        <>
-                <input type="text" placeholder="Name" onChange={handleChange} />
-                <input type="text" placeholder="Passion" />
-                <button type="submit">Mettre à jour</button>
-        </>
-    );
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  };
+
+  return (
+    <>
+      <p>{}</p>
+      <input
+        type="text"
+        label="name"
+        name="name"
+        placeholder="name"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        label="passion"
+        name="passion"
+        placeholder="passion"
+        onChange={handleChange}
+      />
+    </>
+  );
 };
 
 export default Profile;
