@@ -1,4 +1,4 @@
-import axios from "axios";
+import { axios } from "axios";
 
 export const getTrends = async () => {
   const BASE_URL = "https://api.themoviedb.org/3/discover/movie";
