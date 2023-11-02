@@ -7,13 +7,14 @@ const SearchMovie = () => {
 
 const handleSubmit = (e) => {
     e.preventDefault();
-    if (search.length > 0) {
+    // if (search.length > 0) {
+      //Pour Luca du futur il faut que tu refasses ce système de con plus proprement et FoNcTiOnNeLlEm
         alert("Recherche lancée pour " + search);
         setTitle(<h1>Recherche pour {search}</h1>);
         setSearch("");
-    } else {
-        alert("Merci d'entrer un titre");
-    }
+    // } else {
+    //     alert("Merci d'entrer un titre");
+    // }
 };
 
   const handleInputChange = (titleInput) => {
