@@ -6,6 +6,7 @@ import ClassComponent from "./pages/ClassComponent";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import MovieEditor from "./pages/MovieEditor";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/search_movie" element={<SearchMovie />} />
           <Route path="/class_component" element={<ClassComponent/>} />
           <Route path="/movie_editor" element={<MovieEditor/>} />
+          <Route path="/profile" element={<Profile/>} />
         </Routes>
         </Provider>
       </Router>
